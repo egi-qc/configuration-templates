@@ -1,0 +1,153 @@
+# YAIM example site configuration file - adapt it to your site!
+
+##############################
+# CE configuration variables #
+##############################
+
+# Argus service hostname
+ARGUS_HOST=test30.egi.cesga.es
+WMS_HOST=test22.egi.cesga.es
+LB_HOST=test22.egi.cesga.es
+BDII_HOST=topbdii02.ncg.ingrid.pt
+SITE_BDII_HOST=sbdii02.ncg.ingrid.pt 
+##LFC_HOST=lxb7607.cern.ch
+PX_HOST=myproxy.egi.cesga.es
+MON_HOST=test07.egi.cesga.es 
+
+YAIM_LOGGING_LEVEL=DEBUG
+
+
+################################
+# Site configuration variables #
+################################
+
+SITE_EMAIL=egee-admin@cesga.es
+
+
+SITE_NAME=CESGA
+SITE_LOC="Santiago de Compostela, Spain"
+SITE_LAT=42.875558          #42.8757 # -90 to 90 degrees
+SITE_LONG=-8.553147         #-8.5536 # -180 to 180 degrees
+
+
+# PAP administrator DN allowed to use 'pap-admin' command
+#PAP_ADMIN_DN="/DC=es/DC=irisgrid/O=cesga/CN=esteban.freire"
+PAP_ADMIN_DN="/DC=es/DC=irisgrid/O=cesga/CN=alvarosimon"
+
+# These variables tell YAIM where to find additional configuration files.
+###WN_LIST=/opt/glite/yaim/etc/wn-list.conf
+USERS_CONF=/opt/glite/yaim/etc/users.conf
+GROUPS_CONF=/opt/glite/yaim/etc/groups.conf
+###FUNCTIONS_DIR=/opt/glite/yaim/functions
+
+
+############################
+# SubCluster configuration #
+############################
+# Architecture and enviroment specific settings
+CE_CPU_MODEL=Opteron
+CE_CPU_VENDOR=amd
+CE_CPU_SPEED=2200
+
+CE_OS="ScientificSL"    # Forma correcta
+CE_OS_RELEASE=5.5
+CE_OS_VERSION="Boron"
+
+
+#New variables
+CE_PHYSCPU=2
+CE_LOGCPU=2
+CE_OS_ARCH=x86_64
+CE_CAPABILITY="CPUScalingReferenceSI00=2395"
+CE_OTHERDESCR="Cores=24,Benchmark=9.58-HEP-SPEC06"
+SE_MOUNT_INFO_LIST="none"
+CE_SI00=2395
+
+CE_MINPHYSMEM=524
+CE_MINVIRTMEM=512
+CE_SMPSIZE=2
+CE_SF00=1714
+CE_OUTBOUNDIP=TRUE
+CE_INBOUNDIP=FALSE
+CE_RUNTIMEENV="
+    LCG-2
+    LCG-2_1_0
+    LCG-2_1_1
+    LCG-2_2_0
+    LCG-2_3_0
+    LCG-2_3_1
+    LCG-2_4_0
+    LCG-2_5_0
+    LCG-2_6_0
+    LCG-2_7_0
+    GLITE-3_0_0
+    GLITE-3_0_2
+    GLITE-3_1_0
+    R-GMA
+"
+
+# VOS="atlas alice lhcb cms dteam biomed"
+# Space separated list of supported VOs by your site
+VOS="ops dteam ops.vo.ibergrid.eu"
+QUEUES="GRID_ops GRID_dteam GRID_opsibeu"
+VO_SW_DIR=/opt/exp_soft
+
+#New in Yaim 3.0.1
+GRID_OPS_GROUP_ENABLE="ops /VO=ops/GROUP=/ops/ROLE=lcgadmin"
+GRID_DTEAM_GROUP_ENABLE="dteam /VO=dteam/GROUP=/dteam/ROLE=lcgadmin"
+GRID_OPSIBEU_GROUP_ENABLE="ops.vo.ibergrid.eu /VO=ops.vo.ibergrid.eu/GROUP=/ops.vo.ibergrid.eu/ROLE=VO-Admin /VO=ops.vo.ibergrid.eu/GROUP=/ops.vo.ibergrid.eu/ROLE=Production"
+#GRID_IBERIBEU_GROUP_ENABLE="iber.vo.ibergrid.eu /VO=iber.vo.ibergrid.eu/GROUP=/iber.vo.ibergrid.eu/ROLE=VO-Admin /VO=iber.vo.ibergrid.eu/GROUP=/iber.vo.ibergrid.eu/ROLE=Production"
+
+
+#::::::::::::::
+#dteam
+#::::::::::::::
+VO_DTEAM_SW_DIR=$VO_SW_DIR/dteam
+VO_DTEAM_DEFAULT_SE=$DPM_HOST
+VO_DTEAM_STORAGE_DIR=$CLASSIC_STORAGE_DIR/dteam
+VO_DTEAM_QUEUES="GRID_small"
+#New conf (https://wiki.egi.eu/wiki/Dteam_vo)
+VO_DTEAM_VOMS_SERVERS='vomss://voms.hellasgrid.gr:8443/voms/dteam?/dteam/'
+VO_DTEAM_VOMSES="'dteam lcg-voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch dteam 24' 'dteam voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch dteam 24' 'dteam voms.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms.hellasgrid.gr dteam 24' 'dteam voms2.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr dteam 24'"
+VO_DTEAM_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006' '/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006'"
+
+
+#::::::::::::::
+#ops
+#::::::::::::::
+VO_OPS_SW_DIR=$VO_SW_DIR/ops
+VO_OPS_DEFAULT_SE=$DPM_HOST
+VO_OPS_STORAGE_DIR=$CLASSIC_STORAGE_DIR/ops
+VO_OPS_QUEUES="GRID_ops"
+VO_OPS_VOMS_SERVERS="'vomss://voms.cern.ch:8443/voms/ops?/ops/'"
+VO_OPS_VOMSES="'ops voms.cern.ch 15009 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch ops' 'ops lcg-voms.cern.ch 15009 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch ops'"
+VO_OPS_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
+
+
+## IBERGRID VOS ##
+# ops.vo.ibergrid.eu
+#VO_OPS_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/opsibeu
+#VO_OPS_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+#VO_OPS_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/opsibeu
+#VO_OPS_VO_IBERGRID_EU_QUEUES="GRID_opsibeu"
+#VO_OPS_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms02.ncg.ingrid.pt:8443/voms/ops.vo.ibergrid.eu?/ops.vo.ibergrid.eu'"
+#VO_OPS_VO_IBERGRID_EU_VOMSES="'ops.vo.ibergrid.eu voms02.ncg.ingrid.pt 40001 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms02.ncg.ingrid.pt ops.vo.ibergrid.eu'"
+#VO_OPS_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority'"
+VO_OPS_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/opsibeu
+VO_OPS_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_OPS_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/opsibeu
+VO_OPS_VO_IBERGRID_EU_QUEUES="GRID_opsibeu"
+VO_OPS_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://test10.egi.cesga.es:8443/voms/ops.vo.ibergrid.eu'"
+#VO_OPS_VO_IBERGRID_EU_VOMSES="'ops.vo.ibergrid.eu test10.egi.cesga.es 15000 /DC=es/DC=irisgrid/O=rediris-test-egi-cesga-sha-2/CN=test10.egi.cesga.es ops.vo.ibergrid.eu'"
+VO_OPS_VO_IBERGRID_EU_VOMSES="'ops.vo.ibergrid.eu test10.egi.cesga.es 15000 /DC=es/DC=irisgrid/O=cesga/CN=host/test10.egi.cesga.es ops.vo.ibergrid.eu'"
+VO_OPS_VO_IBERGRID_EU_VOMS_CA_DN="'/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+
+# iber.vo.ibergrid.eu
+#VO_IBER_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/iberibeu
+#VO_IBER_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+#VO_IBER_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/iberibeu
+#VO_IBER_VO_IBERGRID_EU_QUEUES="GRID_iberibeu"
+#VO_IBER_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms02.ncg.ingrid.pt:8443/voms/iber.vo.ibergrid.eu?/iber.vo.ibergrid.eu'"
+#VO_IBER_VO_IBERGRID_EU_VOMSES="'iber.vo.ibergrid.eu voms02.ncg.ingrid.pt 40003 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms02.ncg.ingrid.pt iber.vo.ibergrid.eu'"
+#VO_IBER_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority'"

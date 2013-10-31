@@ -1,0 +1,28 @@
+resource "http://test30.egi.cesga.es/deny" {
+   obligation "http://glite.org/xacml/obligation/local-environment-map" {}
+         action ".*" {
+     rule permit { vo = "ops" }
+     rule deny { vo = "dteam" }
+     rule permit { vo = "ops.vo.ibergrid.eu" }
+     rule permit {pfqan = "/ops/Role=lcgadmin/Capability=NULL" }
+     rule permit {pfqan = "/ops/Role=lcgadmin" }
+     rule permit {pfqan = "/ops/Role=NULL/Capability=NULL" }
+     rule permit {pfqan = "/ops" }
+     rule permit {pfqan = "/ops/Role=pilot/Capability=NULL" }
+     rule permit {pfqan = "/ops/Role=pilot" }
+     rule deny {pfqan = "/dteam/Role=lcgadmin/Capability=NULL" }
+     rule deny {pfqan = "/dteam/Role=lcgadmin" }
+     rule deny {pfqan = "/dteam/Role=production/Capability=NULL" }
+     rule deny {pfqan = "/dteam/Role=production" }
+     rule deny {pfqan = "/dteam/Role=NULL/Capability=NULL" }
+     rule deny {pfqan = "/dteam" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu/Role=VO-Admin/Capability=NULL" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu/Role=VO-Admin" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu/Role=SW-Admin/Capability=NULL" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu/Role=SW-Admin" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu/Role=Production/Capability=NULL" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu/Role=Production" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu/Role=NULL/Capability=NULL" }
+     rule permit {pfqan = "/ops.vo.ibergrid.eu" }
+     }
+}

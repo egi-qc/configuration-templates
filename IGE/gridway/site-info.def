@@ -1,0 +1,489 @@
+# YAIM example site configuration file - adapt it to your site!
+
+MY_DOMAIN=egee.cesga.es
+
+# Node names
+# Note: - SE_HOST -->  Removed, see CLASSIC_HOST, DCACHE_ADMIN, DPM_HOST below
+#       - REG_HOST --> There is only 1 central registry for the time being.
+CE_HOST=cream.egi.cesga.es
+RB_HOST=wms01.$MY_DOMAIN
+LB_HOST=wms01.$MY_DOMAIN
+WMS_HOST=wms01.$MY_DOMAIN
+PX_HOST=myproxy.egi.cesga.es
+BDII_HOST=topbdii.core.ibergrid.eu
+BDII_LIST="topbdii.core.ibergrid.eu:2170"
+MON_HOST=apel.egi.cesga.es
+REG_HOST=lcgic01.gridpp.rl.ac.uk
+SITE_BDII_HOST=sitebdii.egi.cesga.es
+
+YAIM_LOGGING_LEVEL=DEBUG
+
+#####################################
+# CREAM CE node cluster mode  #
+#####################################
+## Be sure that CREAMCE_CLUSTER_MODE is set to no (or not set at all). 
+## CREAMCE_CLUSTER_MODE="no"
+
+
+#####################################
+# CREAM CE Variables  #
+#####################################
+CEMON_HOST=cream.egi.cesga.es
+CREAM_DB_USER="cream_user"
+CREAM_DB_PASSWORD="set_a_good_password"
+MYSQL_PASSWORD="set_a_good_password"
+BLPARSER_HOST=cream.egi.cesga.es
+
+##The CREAM sandbox directory name (default /var/cream_sandbox) can be changed using the yaim variable CREAM_SANDBOX_DIR". 
+CREAM_SANDBOX_DIR="/home_grid/var/cream_sandbox"
+CREAM_SANDBOX_PATH="/home_grid/var/cream_sandbox"
+
+
+########################################
+# SGE configuration variables #
+########################################
+BATCH_SERVER="svgd.cesga.es"
+## Jobmanager specific settings
+BLPARSER_WITH_UPDATER_NOTIFIER="true"
+JOB_MANAGER="sge"
+CE_BATCH_SYS="sge"
+SGE_ROOT="/usr/local/sge/pro"
+SGE_CELL="default"
+## GE MASTER PORTS
+SGE_QMASTER=6448
+SGE_EXECD=6449
+SGE_SPOOL_METH="classic"
+SGE_CLUSTER_NAME="svgd" 
+SGE_SHARED_INSTALL="yes"
+BATCH_LOG_DIR="/usr/local/sge/pro/default/common"
+BATCH_BIN_DIR="/usr/local/sge/pro/bin/lx26-amd64"
+BATCH_VERSION="sge-6.2u5"
+
+
+################################
+# APEL configuration variables #
+################################
+APEL_MYSQL_HOST=apel.egi.cesga.es
+APEL_DB_PASSWORD="set_a_good_password"
+
+
+################################
+# MPI configuration variables #
+################################
+MPI_MPICH2_ENABLE="yes"
+MPI_MPICH2_VERSION="1.3.2p1"
+# If you do NOT provide a shared home, set $MPI_SHARED_HOME to "no" (default).
+MPI_SHARED_HOME="yes"
+## MPI_OPENMPI_PATH="/opt/i2g/openmpi/"
+## MPI_MPI_START="/opt/i2g/bin/mpi-start"
+
+
+
+# These variables tell YAIM where to find additional configuration files.
+WN_LIST=/opt/glite/yaim/etc/wn-list.conf
+USERS_CONF=/opt/glite/yaim/etc/users.conf
+GROUPS_CONF=/opt/glite/yaim/etc/groups.conf
+FUNCTIONS_DIR=/opt/glite/yaim/functions
+
+# Set this to your prefered and firewall allowed port range
+GLOBUS_TCP_PORT_RANGE="20000,25000"
+
+# Site-wide settings 
+SITE_EMAIL=grid-admin@cesga.es
+
+#New yaim 3.0.1
+SITE_SUPPORT_EMAIL=$SITE_EMAIL
+
+SITE_NAME=CESGA
+SITE_LOC="Santiago de Compostela, Spain"
+SITE_LAT=42.875558          #42.8757 # -90 to 90 degrees
+SITE_LONG=-8.553147         #-8.5536 # -180 to 180 degrees
+SITE_WEB="http://www.egee.cesga.es"
+
+# Architecture and enviroment specific settings
+CE_CPU_MODEL=Opteron
+CE_CPU_VENDOR=amd
+CE_CPU_SPEED=2200
+
+CE_OS="ScientificSL"    # Forma correcta
+CE_OS_RELEASE=6.0
+CE_OS_VERSION="Carbon"
+
+
+#New variable
+CE_PHYSCPU=30
+CE_LOGCPU=720
+CE_OS_ARCH=x86_64
+CE_CAPABILITY="CPUScalingReferenceSI00=2395"
+CE_OTHERDESCR="Cores=24,Benchmark=9.58-HEP-SPEC06"
+SE_MOUNT_INFO_LIST="none"
+CE_SI00=2395
+
+CE_MINPHYSMEM=1524
+CE_MINVIRTMEM=512
+CE_SMPSIZE=2
+CE_SF00=1714
+CE_OUTBOUNDIP=TRUE
+CE_INBOUNDIP=FALSE
+CE_RUNTIMEENV="
+    LCG-2
+    LCG-2_1_0
+    LCG-2_1_1
+    LCG-2_2_0
+    LCG-2_3_0
+    LCG-2_3_1
+    LCG-2_4_0
+    LCG-2_5_0
+    LCG-2_6_0
+    LCG-2_7_0
+    GLITE-3_0_0
+    GLITE-3_0_2
+    GLITE-3_1_0
+    R-GMA
+"
+
+################################
+# SE/DPM-MySQL configuration variables #
+################################
+
+# The name of the DPM head node 
+DPM_HOST=se2.egi.cesga.es
+
+# The DPM pool name
+#DPMPOOL=the_dpm_pool_name
+DPMPOOL=egee-pool
+
+# The filesystems/partitions parts of the pool
+#DPM_FILESYSTEMS="$DPM_HOST:/path1 my-dpm-poolnode.$MY_DOMAIN:/path2"
+DPM_FILESYSTEMS="$DPM_HOST:/storage  $DPM_HOST:/mnt/xen01"
+
+# The database user
+#DPM_DB_USER=the-dpm-db-user
+DPM_DB_USER=dpm_user
+
+# The database user password
+DPM_DB_PASSWORD=set_a_good_password
+
+# The DPM database host
+#DPM_DB_HOST=$DPM_HOST
+DPM_DB_HOST=$DPM_HOST
+
+# Specifies the default amount of space reserved  for a file
+DPMFSIZE=200M
+
+DPM_INFO_USER=dpm_info
+DPM_INFO_PASS=set_a_good_password
+
+# This largely replaces CE_CLOSE_SE but it is a list of hostnames
+SE_LIST="$DPM_HOST"
+SE_ARCH="multidisk" # "disk, tape, multidisk, other"
+
+
+## The following lines should not be neccesary, I just put them, but I think they are not used -- esfreire 16022012
+#
+# BDII/GIP specific settings
+BDII_HTTP_URL="http://grid-deployment.web.cern.ch/grid-deployment/gis/lcg2-bdii/dteam/lcg2-all-sites.conf"
+# Set this to use FCR
+BDII_FCR="http://goc.grid-support.ac.uk/gridsite/bdii/BDII/www/bdii-update.ldif"
+# Ex.: BDII_REGIONS="CE SE RB PX VOBOX"
+# List of nodes included into CESGA SITE:
+BDII_REGIONS="CE2 SE MON LFC WMS PX NAGIOS VOMS BDII TOPBDII"       # list of the services provided by the site
+BDII_CE2_URL="ldap://$CE_HOST:2170/mds-vo-name=resource,o=grid"
+BDII_SE_URL="ldap://$DPM_HOST:2170/mds-vo-name=resource,o=grid"
+BDII_RB_URL="ldap://$RB_HOST:2135/mds-vo-name=local,o=grid"
+BDII_MON_URL="ldap://$MON_HOST:2170/mds-vo-name=resource,o=grid"
+BDII_PX_URL="ldap://$PX_HOST:2170/mds-vo-name=resource,o=grid"
+BDII_LFC_URL="ldap://lfc.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_WMS_URL="ldap://$WMS_HOST:2170/mds-vo-name=resource,o=grid"
+BDII_FTS_URL="ldap://$FTS_HOST:2170/mds-vo-name=resource,o=grid"
+BDII_NAGIOS_URL="ldap://rnagios.ibergrid.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_VOMS_URL="ldap://voms.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_BDII_URL="ldap://sitebdii.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_TOPBDII_URL="ldap://topbdii.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+
+# VOS="atlas alice lhcb cms dteam biomed"
+# Space separated list of supported VOs by your site
+VOS="ops cesga lhcb dteam biomed compchem fusion alice atlas cms imath.cesga.es ops.vo.ibergrid.eu iber.vo.ibergrid.eu tut.vo.ibergrid.eu eng.vo.ibergrid.eu ict.vo.ibergrid.eu life.vo.ibergrid.eu hpc.vo.ibergrid.eu earth.vo.ibergrid.eu
+bing.vo.ibergrid.eu pfound.vo.ibergrid.eu phys.vo.ibergrid.eu social.vo.ibergrid.eu chem.vo.ibergrid.eu auger mpi"
+QUEUES="GRIDEGI_ops GRIDEGI_large GRIDEGI_large GRIDEGI_small GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_small GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large GRIDEGI_large"
+VO_SW_DIR="/opt/exp_soft2"
+
+#New in Yaim 3.0.1
+GRIDEGI_OPS_GROUP_ENABLE="ops /VO=ops/GROUP=/ops/ROLE=lcgadmin"
+GRIDEGI_SMALL_GROUP_ENABLE="dteam /VO=dteam/GROUP=/dteam/ROLE=lcgadmin ops.vo.ibergrid.eu /VO=ops.vo.ibergrid.eu/GROUP=/ops.vo.ibergrid.eu/ROLE=VO-Admin /VO=ops.vo.ibergrid.eu/GROUP=/ops.vo.ibergrid.eu/ROLE=Production"
+GRIDEGI_LARGE_GROUP_ENABLE="lhcb /VO=lhcb/GROUP=/lhcb/ROLE=lcgadmin /VO=lhcb/GROUP=/lhcb/ROLE=production /VO=lhcb/GROUP=/lhcb/ROLE=pilot /VO=lhcb/GROUP=/lhcb/ROLE=user biomed /VO=biomed/GROUP=/biomed/ROLE=lcgadmin cesga /VO=cesga/GROUP=/cesga/ROLE=VO-Admin compchem /VO=compchem/GROUP=/compchem/ROLE=lcgadmin fusion /VO=fusion/GROUP=/fusion/ROLE=VO-admin alice /VO=alice/GROUP=/alice/ROLE=lcgadmin /VO=alice/GROUP=/alice/ROLE=production atlas /VO=atlas/GROUP=/atlas/ROLE=lcgadmin /VO=atlas/GROUP=/atlas/ROLE=production cms /VO=cms/GROUP=/cms/ROLE=lcgadmin /VO=cms/GROUP=/cms/ROLE=production imath.cesga.es /VO=imath.cesga.es/GROUP=/imath.cesga.es/ROLE=VO-Admin iber.vo.ibergrid.eu /VO=iber.vo.ibergrid.eu/GROUP=/iber.vo.ibergrid.eu/ROLE=VO-Admin /VO=iber.vo.ibergrid.eu/GROUP=/iber.vo.ibergrid.eu/ROLE=Production tut.vo.ibergrid.eu /VO=tut.vo.ibergrid.eu/GROUP=/tut.vo.ibergrid.eu/ROLE=VO-Admin /VO=tut.vo.ibergrid.eu/GROUP=/tut.vo.ibergrid.eu/ROLE=Production eng.vo.ibergrid.eu /VO=eng.vo.ibergrid.eu/GROUP=/eng.vo.ibergrid.eu/ROLE=VO-Admin /VO=eng.vo.ibergrid.eu/GROUP=/eng.vo.ibergrid.eu/ROLE=Production bing.vo.ibergrid.eu /VO=bing.vo.ibergrid.eu/GROUP=/bing.vo.ibergrid.eu/ROLE=VO-Admin /VO=bing.vo.ibergrid.eu/GROUP=/bing.vo.ibergrid.eu/ROLE=Production chem.vo.ibergrid.eu /VO=chem.vo.ibergrid.eu/GROUP=/chem.vo.ibergrid.eu/ROLE=VO-Admin /VO=chem.vo.ibergrid.eu/GROUP=/chem.vo.ibergrid.eu/ROLE=Production earth.vo.ibergrid.eu /VO=earth.vo.ibergrid.eu/GROUP=/earth.vo.ibergrid.eu/ROLE=VO-Admin /VO=earth.vo.ibergrid.eu/GROUP=/earth.vo.ibergrid.eu/ROLE=Production hpc.vo.ibergrid.eu /VO=hpc.vo.ibergrid.eu/GROUP=/hpc.vo.ibergrid.eu/ROLE=VO-Admin /VO=hpc.vo.ibergrid.eu/GROUP=/hpc.vo.ibergrid.eu/ROLE=Production ict.vo.ibergrid.eu /VO=ict.vo.ibergrid.eu/GROUP=/ict.vo.ibergrid.eu/ROLE=VO-Admin /VO=ict.vo.ibergrid.eu/GROUP=/ict.vo.ibergrid.eu/ROLE=Production life.vo.ibergrid.eu /VO=life.vo.ibergrid.eu/GROUP=/life.vo.ibergrid.eu/ROLE=VO-Admin /VO=life.vo.ibergrid.eu/GROUP=/life.vo.ibergrid.eu/ROLE=Production pfound.vo.ibergrid.eu /VO=pfound.vo.ibergrid.eu/GROUP=/pfound.vo.ibergrid.eu/ROLE=VO-Admin /VO=pfound.vo.ibergrid.eu/GROUP=/pfound.vo.ibergrid.eu/ROLE=Production phys.vo.ibergrid.eu /VO=phys.vo.ibergrid.eu/GROUP=/phys.vo.ibergrid.eu/ROLE=VO-Admin /VO=phys.vo.ibergrid.eu/GROUP=/phys.vo.ibergrid.eu/ROLE=Production social.vo.ibergrid.eu /VO=social.vo.ibergrid.eu/GROUP=/social.vo.ibergrid.eu/ROLE=VO-Admin /VO=social.vo.ibergrid.eu/GROUP=/social.vo.ibergrid.eu/ROLE=Production auger /VO=auger/GROUP=/auger/ROLE=SoftwareManager /VO=auger/GROUP=/auger/ROLE=Production /VO=auger/GROUP=/auger/FNAL mpi /VO=mpi/GROUP=/mpi/ROLE=SoftwareManager /VO=mpi/GROUP=/mpi/ROLE=Production"
+
+
+
+# VO specific settings. For help see: https://lcg-sft.cern.ch/yaimtool/yaimtool.py
+#::::::::::::::
+#auger
+#::::::::::::::
+VO_AUGER_SW_DIR=$VO_SW_DIR/augersgm
+VO_AUGER_DEFAULT_SE=$DPM_HOST
+VO_AUGER_STORAGE_DIR=$CLASSIC_STORAGE_DIR/auger
+VO_AUGER_QUEUES="GRIDEGI_large"
+VO_AUGER_VOMS_SERVERS='vomss://voms1.egee.cesnet.cz:8443/voms/auger'
+VO_AUGER_VOMSES="'auger voms1.egee.cesnet.cz 15004 /DC=cz/DC=cesnet-ca/O=CESNET/CN=voms1.egee.cesnet.cz auger 24'"
+VO_AUGER_VOMS_CA_DN="'/DC=cz/DC=cesnet-ca/O=CESNET CA/CN=CESNET CA 3'"
+
+#::::::::::::::
+#mpi 
+#::::::::::::::
+VO_MPI_SW_DIR=$VO_SW_DIR/mpisgm
+VO_MPI_DEFAULT_SE=$DPM_HOST
+VO_MPI_STORAGE_DIR=$CLASSIC_STORAGE_DIR/mpi
+VO_MPI_QUEUES="GRIDEGI_large"
+VO_MPI_VOMS_SERVERS='vomss://voms1.egee.cesnet.cz:8443/voms/mpi?/mpi'
+VO_MPI_VOMSES="'mpi voms1.egee.cesnet.cz 15030 /DC=cz/DC=cesnet-ca/O=CESNET/CN=voms1.egee.cesnet.cz mpi 24'"
+VO_MPI_VOMS_CA_DN="'/DC=cz/DC=cesnet-ca/O=CESNET CA/CN=CESNET CA 3'"
+VO_MPI_WMS_HOSTS="wms1.egee.cesnet.cz wms2.egee.cesnet.cz" 
+
+#::::::::::::::
+#alice
+#::::::::::::::
+VO_ALICE_SW_DIR=$VO_SW_DIR/alice
+VO_ALICE_DEFAULT_SE=$DPM_HOST
+VO_ALICE_STORAGE_DIR=$CLASSIC_STORAGE_DIR/alice
+VO_ALICE_QUEUES="GRIDEGI_large"
+VO_ALICE_VOMS_SERVERS='vomss://voms.cern.ch:8443/voms/alice?/alice/'
+VO_ALICE_VOMSES="'alice voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch alice'"
+VO_ALICE_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
+
+#::::::::::::::
+#atlas
+#::::::::::::::
+VO_ATLAS_SW_DIR=$VO_SW_DIR/atlas
+VO_ATLAS_DEFAULT_SE=$DPM_HOST
+VO_ATLAS_STORAGE_DIR=$CLASSIC_STORAGE_DIR/atlas
+VO_ATLAS_QUEUES="GRIDEGI_large"
+VO_ATLAS_VOMS_SERVERS="vomss://voms.cern.ch:8443/voms/atlas?/atlas"
+VO_ATLAS_VOMSES="'atlas voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch atlas'"
+VO_ATLAS_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
+
+#::::::::::::::
+#biomed
+#::::::::::::::
+VO_BIOMED_SW_DIR=$VO_SW_DIR/biomed
+VO_BIOMED_DEFAULT_SE=$DPM_HOST
+VO_BIOMED_STORAGE_DIR=$CLASSIC_STORAGE_DIR/biomed
+VO_BIOMED_QUEUES="GRIDEGI_large"
+VO_BIOMED_VOMS_SERVERS="'vomss://voms-biomed.in2p3.fr:8443/voms/biomed?/biomed'"
+VO_BIOMED_VOMSES="'biomed cclcgvomsli01.in2p3.fr 15000 /O=GRID-FR/C=FR/O=CNRS/OU=CC-IN2P3/CN=cclcgvomsli01.in2p3.fr  biomed'"
+VO_BIOMED_VOMS_CA_DN="'/C=FR/O=CNRS/CN=GRID2-FR'"
+
+#::::::::::::::
+#cesga
+#::::::::::::::
+VO_CESGA_SW_DIR=$VO_SW_DIR/cesga
+VO_CESGA_DEFAULT_SE=$DPM_HOST
+VO_CESGA_STORAGE_DIR=$CLASSIC_STORAGE_DIR/cesga
+VO_CESGA_QUEUES="GRIDEGI_large"
+VO_CESGA_USERS=vomss://voms.egi.cesga.es:8443/voms/cesga?/cesga
+VO_CESGA_VOMS_SERVERS="'vomss://voms.egi.cesga.es:8443/voms/cesga?/cesga'"
+VO_CESGA_VOMSES="'cesga voms.egi.cesga.es 15110 /DC=es/DC=irisgrid/O=cesga/CN=host/voms.egi.cesga.es cesga'"
+VO_CESGA_VOMS_CA_DN="'/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+
+#::::::::::::::
+#cms
+#::::::::::::::
+VO_CMS_SW_DIR=$VO_SW_DIR/cms
+VO_CMS_DEFAULT_SE=$DPM_HOST
+VO_CMS_STORAGE_DIR=$CLASSIC_STORAGE_DIR/cms
+VO_CMS_QUEUES="GRIDEGI_large"
+VO_CMS_VOMS_SERVERS="vomss://voms.cern.ch:8443/voms/cms?/cms"
+VO_CMS_VOMSES="'cms voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch cms'"
+VO_CMS_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
+
+#::::::::::::::
+#compchem
+#::::::::::::::
+VO_COMPCHEM_SW_DIR=$VO_SW_DIR/compchem
+VO_COMPCHEM_DEFAULT_SE=$DPM_HOST
+VO_COMPCHEM_STORAGE_DIR=$CLASSIC_STORAGE_DIR/compchem
+VO_COMPCHEM_QUEUES="GRIDEGI_large"
+VO_COMPCHEM_USERS=vomss://voms.cnaf.infn.it:8443/voms/compchem?/compchem
+VO_COMPCHEM_VOMS_SERVERS="'vomss://voms.cnaf.infn.it:8443/voms/compchem?/compchem' 'vomss://voms-01.pd.infn.it:8443/voms/compchem?/compchem'"
+VO_COMPCHEM_VOMSES="'compchem voms.cnaf.infn.it 15003 /C=IT/O=INFN/OU=Host/L=CNAF/CN=voms.cnaf.infn.it compchem' 'compchem voms-01.pd.infn.it 15003 /C=IT/O=INFN/OU=Host/L=Padova/CN=voms-01.pd.infn.it compchem'"
+VO_COMPCHEM_VOMS_CA_DN="'/C=IT/O=INFN/CN=INFN CA' '/C=IT/O=INFN/CN=INFN CA'"
+
+#::::::::::::::
+#dteam
+#::::::::::::::
+VO_DTEAM_SW_DIR=$VO_SW_DIR/dteam
+VO_DTEAM_DEFAULT_SE=$DPM_HOST
+VO_DTEAM_STORAGE_DIR=$CLASSIC_STORAGE_DIR/dteam
+VO_DTEAM_QUEUES="GRIDEGI_small"
+VO_DTEAM_VOMS_SERVERS='vomss://voms.hellasgrid.gr:8443/voms/dteam?/dteam/'
+VO_DTEAM_VOMSES="'dteam lcg-voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch dteam 24' 'dteam voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch dteam 24' 'dteam voms.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms.hellasgrid.gr dteam 24' 'dteam voms2.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr dteam 24'"
+VO_DTEAM_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006' '/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006'"
+
+
+#::::::::::::::
+#fusion
+#::::::::::::::
+VO_FUSION_SW_DIR=$VO_SW_DIR/fusion
+VO_FUSION_DEFAULT_SE=$DPM_HOST
+VO_FUSION_STORAGE_DIR=$CLASSIC_STORAGE_DIR/fusion
+VO_FUSION_QUEUES="GRIDEGI_large"
+VO_FUSION_VOMS_SERVERS="vomss://voms-prg.bifi.unizar.es:8443/voms/fusion?/fusion/"
+VO_FUSION_VOMSES="'fusion voms-prg.bifi.unizar.es 15001 /DC=es/DC=irisgrid/O=bifi-unizar/CN=voms-prg.bifi.unizar.es fusion'"
+VO_FUSION_VOMS_CA_DN="'/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+
+#::::::::::::::
+#imath.cesga.es
+#::::::::::::::
+VO_IMATH_CESGA_ES_SW_DIR=$VO_SW_DIR/imath
+VO_IMATH_CESGA_ES_DEFAULT_SE=$DPM_HOST
+VO_IMATH_CESGA_ES_STORAGE_DIR=$CLASSIC_STORAGE_DIR/imath
+VO_IMATH_CESGA_ES_QUEUES="GRIDEGI_large"
+VO_IMATH_CESGA_ES_USERS=vomss://voms.egi.cesga.es:8443/voms/imath.cesga.es?/imath.cesga.es
+VO_IMATH_CESGA_ES_VOMS_SERVERS="'vomss://voms.egi.cesga.es:8443/voms/imath.cesga.es?/imath.cesga.es'"
+VO_IMATH_CESGA_ES_VOMSES="'imath.cesga.es voms.egi.cesga.es 15100 /DC=es/DC=irisgrid/O=cesga/CN=host/voms.egi.cesga.es imath.cesga.es'"
+VO_IMATH_CESGA_ES_VOMS_CA_DN="'/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+
+#::::::::::::::
+#lhcb
+#::::::::::::::
+VO_LHCB_SW_DIR=$VO_SW_DIR/lhcb
+VO_LHCB_DEFAULT_SE=$DPM_HOST
+VO_LHCB_STORAGE_DIR=$CLASSIC_STORAGE_DIR/lhcb
+VO_LHCB_QUEUES="GRIDEGI_large"
+VO_LHCB_SGM=ldap://grid-vo.nikhef.nl/ou=lcgadmin,o=lhcb,dc=eu-datagrid,dc=org
+VO_LHCB_USERS=ldap://grid-vo.nikhef.nl/ou=lcg1,o=lhcb,dc=eu-datagrid,dc=org
+VO_LHCB_VOMS_SERVERS="'vomss://voms.cern.ch:8443/voms/lhcb?/lhcb/'"
+VO_LHCB_VOMSES="'lhcb voms.cern.ch 15003 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch lhcb'"
+VO_LHCB_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
+
+#::::::::::::::
+#ops
+#::::::::::::::
+VO_OPS_SW_DIR=$VO_SW_DIR/ops
+VO_OPS_DEFAULT_SE=$DPM_HOST
+VO_OPS_STORAGE_DIR=$CLASSIC_STORAGE_DIR/ops
+VO_OPS_QUEUES="GRIDEGI_ops"
+VO_OPS_VOMS_SERVERS="'vomss://voms.cern.ch:8443/voms/ops?/ops/'"
+VO_OPS_VOMSES="'ops voms.cern.ch 15009 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch ops' 'ops lcg-voms.cern.ch 15009 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch ops'"
+VO_OPS_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
+
+
+## IBERGRID VOS ##
+# ops.vo.ibergrid.eu
+VO_OPS_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/opsibeusgm
+VO_OPS_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_OPS_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/opsibeu
+VO_OPS_VO_IBERGRID_EU_QUEUES="GRIDEGI_small"
+VO_OPS_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/ops.vo.ibergrid.eu?/ops.vo.ibergrid.eu'"
+VO_OPS_VO_IBERGRID_EU_VOMSES="'ops.vo.ibergrid.eu voms01.ncg.ingrid.pt 40001 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt ops.vo.ibergrid.eu' 'ops.vo.ibergrid.eu ibergrid-voms.ifca.es 40001 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es ops.vo.ibergrid.eu'"
+VO_OPS_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# tut.vo.ibergrid.eu
+VO_TUT_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/tutibeusgm
+VO_TUT_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_TUT_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/tutibeu
+VO_TUT_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_TUT_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/tut.vo.ibergrid.eu?/tut.vo.ibergrid.eu'"
+VO_TUT_VO_IBERGRID_EU_VOMSES="'tut.vo.ibergrid.eu voms01.ncg.ingrid.pt 40002 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt tut.vo.ibergrid.eu' 'tut.vo.ibergrid.eu ibergrid-voms.ifca.es 40002 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es tut.vo.ibergrid.eu'"
+VO_TUT_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# iber.vo.ibergrid.eu
+VO_IBER_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/iberibeusgm
+VO_IBER_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_IBER_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/iberibeu
+VO_IBER_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_IBER_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/iber.vo.ibergrid.eu?/iber.vo.ibergrid.eu'"
+VO_IBER_VO_IBERGRID_EU_VOMSES="'iber.vo.ibergrid.eu voms01.ncg.ingrid.pt 40003 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt iber.vo.ibergrid.eu' 'iber.vo.ibergrid.eu ibergrid-voms.ifca.es 40003 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es iber.vo.ibergrid.eu'"
+VO_IBER_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# eng.vo.ibergrid.eu
+VO_ENG_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/engibeusgm 
+VO_ENG_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_ENG_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/engibeu 
+VO_ENG_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_ENG_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/eng.vo.ibergrid.eu?/eng.vo.ibergrid.eu"
+VO_ENG_VO_IBERGRID_EU_VOMSES="'eng.vo.ibergrid.eu voms01.ncg.ingrid.pt 40013 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt eng.vo.ibergrid.eu' 'eng.vo.ibergrid.eu ibergrid-voms.ifca.es 40013 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es eng.vo.ibergrid.eu'"
+VO_ENG_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# ict.vo.ibergrid.eu
+VO_ICT_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/ictibeusgm 
+VO_ICT_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_ICT_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/ictibeu 
+VO_ICT_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_ICT_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/ict.vo.ibergrid.eu?/ict.vo.ibergrid.eu"
+VO_ICT_VO_IBERGRID_EU_VOMSES="'ict.vo.ibergrid.eu voms01.ncg.ingrid.pt 40008 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt ict.vo.ibergrid.eu' 'ict.vo.ibergrid.eu ibergrid-voms.ifca.es 40008 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es ict.vo.ibergrid.eu'"
+VO_ICT_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# life.vo.ibergrid.eu
+VO_LIFE_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/lifibeusgm 
+VO_LIFE_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_LIFE_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/lifibeu 
+VO_LIFE_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_LIFE_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/life.vo.ibergrid.eu?/life.vo.ibergrid.eu"
+VO_LIFE_VO_IBERGRID_EU_VOMSES="'life.vo.ibergrid.eu voms01.ncg.ingrid.pt 40010 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt life.vo.ibergrid.eu' 'life.vo.ibergrid.eu ibergrid-voms.ifca.es 40010 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es life.vo.ibergrid.eu'"
+VO_LIFE_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# hpc.vo.ibergrid.eu
+VO_HPC_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/hpcibeusgm
+VO_HPC_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_HPC_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/hpcibeu
+VO_HPC_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_HPC_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/hpc.vo.ibergrid.eu?/hpc.vo.ibergrid.eu"
+VO_HPC_VO_IBERGRID_EU_VOMSES="'hpc.vo.ibergrid.eu voms01.ncg.ingrid.pt 40005 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt hpc.vo.ibergrid.eu' 'hpc.vo.ibergrid.eu ibergrid-voms.ifca.es 40005 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es hpc.vo.ibergrid.eu'"
+VO_HPC_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# earth.vo.ibergrid.eu
+VO_EARTH_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/earibeusgm
+VO_EARTH_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_EARTH_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/earibeu
+VO_EARTH_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_EARTH_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/earth.vo.ibergrid.eu?/earth.vo.ibergrid.eu"
+VO_EARTH_VO_IBERGRID_EU_VOMSES="'earth.vo.ibergrid.eu voms01.ncg.ingrid.pt 40011 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt earth.vo.ibergrid.eu' 'earth.vo.ibergrid.eu ibergrid-voms.ifca.es 40011 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es earth.vo.ibergrid.eu'"
+VO_EARTH_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# bing.vo.ibergrid.eu
+VO_BING_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/binibeusgm
+VO_BING_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_BING_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/binibeu
+VO_BING_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_BING_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/bing.vo.ibergrid.eu?/bing.vo.ibergrid.eu"
+VO_BING_VO_IBERGRID_EU_VOMSES="'bing.vo.ibergrid.eu voms01.ncg.ingrid.pt 40004 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt bing.vo.ibergrid.eu' 'bing.vo.ibergrid.eu ibergrid-voms.ifca.es 40004 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es bing.vo.ibergrid.eu'"
+VO_BING_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# pfound.vo.ibergrid.eu
+VO_PFOUND_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/pfoibeusgm
+VO_PFOUND_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_PFOUND_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/pfoibeu
+VO_PFOUND_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_PFOUND_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/pfound.vo.ibergrid.eu?/pfound.vo.ibergrid.eu"
+VO_PFOUND_VO_IBERGRID_EU_VOMSES="'pfound.vo.ibergrid.eu voms01.ncg.ingrid.pt 40006 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt pfound.vo.ibergrid.eu' 'pfound.vo.ibergrid.eu ibergrid-voms.ifca.es 40006 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es pfound.vo.ibergrid.eu'"
+VO_PFOUND_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# phys.vo.ibergrid.eu
+VO_PHYS_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/phyibeusgm
+VO_PHYS_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_PHYS_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/phyibeu
+VO_PHYS_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_PHYS_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/phys.vo.ibergrid.eu?/phys.vo.ibergrid.eu"
+VO_PHYS_VO_IBERGRID_EU_VOMSES="'phys.vo.ibergrid.eu voms01.ncg.ingrid.pt 40007 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt phys.vo.ibergrid.eu' 'phys.vo.ibergrid.eu ibergrid-voms.ifca.es 40007 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es phys.vo.ibergrid.eu'"
+VO_PHYS_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# social.vo.ibergrid.eu
+VO_SOCIAL_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/socibeusgm
+VO_SOCIAL_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_SOCIAL_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/socibeu
+VO_SOCIAL_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_SOCIAL_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/social.vo.ibergrid.eu"?/social.vo.ibergrid.eu""
+VO_SOCIAL_VO_IBERGRID_EU_VOMSES="'social.vo.ibergrid.eu voms01.ncg.ingrid.pt 40012 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt social.vo.ibergrid.eu' 'social.vo.ibergrid.eu ibergrid-voms.ifca.es 40012 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es social.vo.ibergrid.eu'"
+VO_SOCIAL_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"
+
+# chem.vo.ibergrid.eu
+VO_CHEM_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/cheibeusgm
+VO_CHEM_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_CHEM_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/cheibeu
+VO_CHEM_VO_IBERGRID_EU_QUEUES="GRIDEGI_large"
+VO_CHEM_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms01.ncg.ingrid.pt:8443/voms/chem.vo.ibergrid.eu"?/chem.vo.ibergrid.eu""
+VO_CHEM_VO_IBERGRID_EU_VOMSES="'chem.vo.ibergrid.eu voms01.ncg.ingrid.pt 40009 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms01.ncg.ingrid.pt chem.vo.ibergrid.eu' 'chem.vo.ibergrid.eu ibergrid-voms.ifca.es 40009 /DC=es/DC=irisgrid/O=ifca/CN=host/ibergrid-voms.ifca.es chem.vo.ibergrid.eu'"
+VO_CHEM_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority' '/DC=es/DC=irisgrid/CN=IRISGridCA'"

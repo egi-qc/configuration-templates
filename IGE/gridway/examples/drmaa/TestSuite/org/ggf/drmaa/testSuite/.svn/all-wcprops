@@ -1,0 +1,359 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite
+END
+StSubmitPolling.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitPolling.java
+END
+StSubmitWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitWait.java
+END
+MtSubmitBeforeInitWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/MtSubmitBeforeInitWait.java
+END
+StContact.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StContact.java
+END
+StSubmitPollingSynchronizeTimeout.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitPollingSynchronizeTimeout.java
+END
+AllTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/AllTest.java
+END
+StSubmitInHoldRelease.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitInHoldRelease.java
+END
+StUsageCheck.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StUsageCheck.java
+END
+StEmptySessionControl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StEmptySessionControl.java
+END
+StContactDRMDRMAA.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StContactDRMDRMAA.java
+END
+StDRMAAImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StDRMAAImpl.java
+END
+StBulkSubmitWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StBulkSubmitWait.java
+END
+StBulkSubmitInHoldSessionDelete.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StBulkSubmitInHoldSessionDelete.java
+END
+Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/Test.java
+END
+Mt.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/Mt.java
+END
+StAttributeChange.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StAttributeChange.java
+END
+StExitStatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StExitStatus.java
+END
+StSubmitMixtureSync.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitMixtureSync.java
+END
+StSupportedAttr.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSupportedAttr.java
+END
+StEmptySessionSynchronizeNoDispose.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StEmptySessionSynchronizeNoDispose.java
+END
+StBulkSubmitInHoldSingleRelease.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StBulkSubmitInHoldSingleRelease.java
+END
+CreateJobTemplate.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/CreateJobTemplate.java
+END
+StSubmitInHoldDelete.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitInHoldDelete.java
+END
+StSubmitPollingWaitZeroTimeout.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitPollingWaitZeroTimeout.java
+END
+StEmptySessionSynchronizeDispose.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StEmptySessionSynchronizeDispose.java
+END
+MtExitDuringSubmitOrWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/MtExitDuringSubmitOrWait.java
+END
+StFileFailure.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StFileFailure.java
+END
+StSubmitMixtureSyncAllIdsNoDispose.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitMixtureSyncAllIdsNoDispose.java
+END
+StSubmitMixtureSyncAllNoDispose.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitMixtureSyncAllNoDispose.java
+END
+StSubmitPollingSynchronizeZeroTimeout.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitPollingSynchronizeZeroTimeout.java
+END
+ThreadExecutionSubmitWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/ThreadExecutionSubmitWait.java
+END
+Usage.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/Usage.java
+END
+StSubmitMixtureSyncAllDispose.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitMixtureSyncAllDispose.java
+END
+StSubmitMixtureSyncAllIdsDispose.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitMixtureSyncAllIdsDispose.java
+END
+MtExitDuringSubmit.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/MtExitDuringSubmit.java
+END
+StErrorFileFailure.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StErrorFileFailure.java
+END
+StSubmitInHold.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitInHold.java
+END
+CreateSleeperJobTemplate.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/CreateSleeperJobTemplate.java
+END
+StBulkSubmitInHoldSingleDelete.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StBulkSubmitInHoldSingleDelete.java
+END
+StMultInit.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StMultInit.java
+END
+StInputFileFailure.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StInputFileFailure.java
+END
+StOutputFileFailure.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StOutputFileFailure.java
+END
+ThreadExecutionSubmit.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/ThreadExecutionSubmit.java
+END
+StMultExit.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StMultExit.java
+END
+StSubmitSuspendResumeWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitSuspendResumeWait.java
+END
+CreateExitJobTemplate.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/CreateExitJobTemplate.java
+END
+TestDrmaa.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/TestDrmaa.java
+END
+StBulkSubmitInHold.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StBulkSubmitInHold.java
+END
+StBulkSingleSubmitWaitIndividual.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StBulkSingleSubmitWaitIndividual.java
+END
+MtSubmitWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/MtSubmitWait.java
+END
+StSubmitKillSig.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitKillSig.java
+END
+MtSubmitMtWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/MtSubmitMtWait.java
+END
+StBulkSubmitInHoldSessionRelease.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StBulkSubmitInHoldSessionRelease.java
+END
+StSubmitPollingWaitTimeout.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StSubmitPollingWaitTimeout.java
+END
+ThreadExecution.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/ThreadExecution.java
+END
+StVersion.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StVersion.java
+END
+CreateKillerJobTemplate.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/CreateKillerJobTemplate.java
+END
+StEmptySessionWait.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StEmptySessionWait.java
+END
+StDRMSystem.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/drmaa/TestSuite/org/ggf/drmaa/testSuite/StDRMSystem.java
+END

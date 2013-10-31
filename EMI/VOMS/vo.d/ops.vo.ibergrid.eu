@@ -1,0 +1,18 @@
+DEFAULT_SE=$SRM_HOST
+QUEUES="opsibergrid"
+VOMS_SERVERS="'vomss://test10.egi.cesga.es:16000/voms/ops.vo.ibergrid.eu'"
+SW_DIR=$VO_SW_DIR/ops.vo.ibergrid.eu
+VOMS_CA_DN="'/DC=es/DC=irisgrid/CN=IRISGridCA'"
+VOMSES="'ops.vo.ibergrid.eu test10.egi.cesga.es 15000 /DC=es/DC=irisgrid/O=cesga/CN=host/test10.egi.cesga.es ops.vo.ibergrid.eu'"
+
+VOMS_ADMIN_CERT="/root/asimon/usercert.pem"
+#
+# For test10.egi.cesga.es
+#
+VOMS_DB_HOST="test10.egi.cesga.es"
+VOMS_DB_TYPE="mysql"
+VOMS_DB_USER="opsvoib_admin"
+VOMS_DB_PASS="set_a_good_password"
+VOMS_DB_NAME="VOMS_OPSVOIB"
+VOMS_PORT="15000"
+VOMS_ADMIN_MAIL="asimon@cesga.es"

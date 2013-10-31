@@ -1,0 +1,3 @@
+MYSQL_PASSWORD="set_a_good_password"
+SITE_NAME="test10.egi.cesga.es"
+VOS="ops.vo.ibergrid.eu"

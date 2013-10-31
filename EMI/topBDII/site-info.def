@@ -1,0 +1,146 @@
+# YAIM example site configuration file - adapt it to your site!
+
+MY_DOMAIN=egi.cesga.es
+
+# Node names
+# Note: - SE_HOST -->  Removed, see CLASSIC_HOST, DCACHE_ADMIN, DPM_HOST below
+#       - REG_HOST --> There is only 1 central registry for the time being.
+LB_HOST=tst05.ific.uv.es
+WMS_HOST=tst04.ific.uv.es
+RB_HOST=tst04.ific.uv.es
+PX_HOST=test02.egee.cesga.es
+BDII_HOST=test03.egi.cesga.es
+BDII_LIST="test03.egi.cesga.es:2170"
+
+SITE_BDII_HOST=test04.egi.cesga.es
+
+LFC_HOST=test09.egi.cesga.es
+
+
+LFC_CENTRAL="ops.vo.ibergrid.eu iber.vo.ibergrid.eu"
+
+
+
+
+
+SITE_EMAIL=egee-admin@cesga.es
+
+#New yaim 3.0.1
+SITE_SUPPORT_EMAIL=$SITE_EMAIL
+
+SITE_NAME=UMD-VERIFICATION
+SITE_LOC="Santiago de Compostela, Spain"
+SITE_LAT=42.875558          #42.8757 # -90 to 90 degrees
+SITE_LONG=-8.553147         #-8.5536 # -180 to 180 degrees
+SITE_WEB="http://www.egee.cesga.es"
+
+
+SITE_DESC="UMD-VERIFICATION"
+SITE_SECURITY_EMAIL="grid-admin@cesga.es"
+SITE_OTHER_GRID="WLCG|EGI"
+
+
+#DPM variables
+
+
+USERS_CONF=/opt/glite/yaim/etc/users.conf
+GROUPS_CONF=/opt/glite/yaim/etc/groups.conf
+
+DPM_HOST="test08.egi.cesga.es"   # my-dpm.$MY_DOMAIN
+
+MYSQL_PASSWORD=set_a_good_password
+
+DPMPOOL=egi-pool
+
+DPM_FILESYSTEMS="$DPM_HOST:/storage"
+
+
+DPM_DB_USER=dpmmgr
+DPM_DB_PASSWORD=set_a_good_password
+DPM_DB_HOST=$DPM_HOST
+
+DPM_INFO_USER=dpm_info
+DPM_INFO_PASS=set_a_good_password
+
+SE_LIST="$DPM_HOST"
+SE_ARCH="multidisk" # "disk, tape, multidisk, other"
+
+
+
+VOS="ops dteam ops.vo.ibergrid.eu iber.vo.ibergrid.eu"
+VO_SW_DIR=/opt/exp_soft
+
+
+EDG_WL_SCRATCH=""
+
+
+OPS_GROUP_ENABLE="ops /VO=ops/GROUP=/ops/ROLE=lcgadmin"
+DTEAM_GROUP_ENABLE="dteam /VO=dteam/GROUP=/dteam/ROLE=lcgadmin"
+
+
+# BDII/GIP specific settings
+BDII_HTTP_URL="http://grid-deployment.web.cern.ch/grid-deployment/gis/lcg2-bdii/dteam/lcg2-all-sites.conf"
+# Set this to use FCR
+BDII_FCR="http://goc.grid-support.ac.uk/gridsite/bdii/BDII/www/bdii-update.ldif"
+# Ex.: BDII_REGIONS="CE SE RB PX VOBOX"
+# List of nodes included into CESGA SITE:
+BDII_REGIONS="CE2 SE LFC NAGIOS BDII TOPBDII"       # list of the services provided by the site
+BDII_CE2_URL="ldap://test06.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_SE_URL="ldap://test08.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+#BDII_PX_URL="ldap://$PX_HOST:2170/mds-vo-name=resource,o=grid"
+BDII_LFC_URL="ldap://test09.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_NAGIOS_URL="ldap://test23.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+#BDII_VOMS_URL="ldap://voms.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_BDII_URL="ldap://test04.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+BDII_TOPBDII_URL="ldap://test03.egi.cesga.es:2170/mds-vo-name=resource,o=grid"
+
+
+
+#IBERGRID GROUPS
+GRID_OPSIBEU_GROUP_ENABLE="ops.vo.ibergrid.eu /VO=ops.vo.ibergrid.eu/GROUP=/ops.vo.ibergrid.eu/ROLE=VO-Admin /VO=ops.vo.ibergrid.eu/GROUP=/ops.vo.ibergrid.eu/ROLE=Production"
+GRID_IBERIBEU_GROUP_ENABLE="iber.vo.ibergrid.eu /VO=iber.vo.ibergrid.eu/GROUP=/iber.vo.ibergrid.eu/ROLE=VO-Admin /VO=iber.vo.ibergrid.eu/GROUP=/iber.vo.ibergrid.eu/ROLE=Production"
+
+#::::::::::::::
+#ops
+#::::::::::::::
+VO_OPS_SW_DIR=$VO_SW_DIR/ops
+VO_OPS_DEFAULT_SE=$DPM_HOST
+VO_OPS_STORAGE_DIR=$CLASSIC_STORAGE_DIR/ops
+VO_OPS_QUEUES="GRID_ops"
+VO_OPS_VOMS_SERVERS="vomss://voms.cern.ch:8443/voms/ops?/ops/"
+VO_OPS_VOMSES="'ops voms.cern.ch 15009 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch ops'"
+VO_OPS_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
+
+
+
+
+#::::::::::::::
+#dteam
+#::::::::::::::
+VO_DTEAM_SW_DIR=$VO_SW_DIR/dteam
+VO_DTEAM_DEFAULT_SE=$DPM_HOST
+VO_DTEAM_STORAGE_DIR=$CLASSIC_STORAGE_DIR/dteam
+VO_DTEAM_QUEUES="GRID_dteam"
+VO_DTEAM_VOMS_SERVERS='vomss://voms.hellasgrid.gr:8443/voms/dteam?/dteam/'
+VO_DTEAM_VOMSES="'dteam lcg-voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch dteam 24' 'dteam voms.cern.ch 15004 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch dteam 24' 'dteam voms.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms.hellasgrid.gr dteam 24' 'dteam voms2.hellasgrid.gr 15004 /C=GR/O=HellasGrid/OU=hellasgrid.gr/CN=voms2.hellasgrid.gr dteam 24'"
+VO_DTEAM_VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006' '/C=GR/O=HellasGrid/OU=Certification Authorities/CN=HellasGrid CA 2006'"
+
+
+## IBERGRID VOS ##
+# ops.vo.ibergrid.eu
+VO_OPS_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/opsibeu
+VO_OPS_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_OPS_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/opsibeu
+VO_OPS_VO_IBERGRID_EU_QUEUES="GRID_opsibeu"
+VO_OPS_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms02.ncg.ingrid.pt:8443/voms/ops.vo.ibergrid.eu?/ops.vo.ibergrid.eu'"
+VO_OPS_VO_IBERGRID_EU_VOMSES="'ops.vo.ibergrid.eu voms02.ncg.ingrid.pt 40001 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms02.ncg.ingrid.pt ops.vo.ibergrid.eu'"
+VO_OPS_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority'"
+
+# iber.vo.ibergrid.eu
+VO_IBER_VO_IBERGRID_EU_SW_DIR=$VO_SW_DIR/iberibeu
+VO_IBER_VO_IBERGRID_EU_DEFAULT_SE=$DPM_HOST
+VO_IBER_VO_IBERGRID_EU_STORAGE_DIR=$CLASSIC_STORAGE_DIR/iberibeu
+VO_IBER_VO_IBERGRID_EU_QUEUES="GRID_iberibeu"
+VO_IBER_VO_IBERGRID_EU_VOMS_SERVERS="'vomss://voms02.ncg.ingrid.pt:8443/voms/iber.vo.ibergrid.eu?/iber.vo.ibergrid.eu'"
+VO_IBER_VO_IBERGRID_EU_VOMSES="'iber.vo.ibergrid.eu voms02.ncg.ingrid.pt 40003 /C=PT/O=LIPCA/O=LIP/OU=Lisboa/CN=voms02.ncg.ingrid.pt iber.vo.ibergrid.eu'"
+VO_IBER_VO_IBERGRID_EU_VOMS_CA_DN="'/C=PT/O=LIPCA/CN=LIP Certification Authority'"

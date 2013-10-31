@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/jsdl
+END
+HPCProfileExample.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/jsdl/HPCProfileExample.xml
+END
+basicExample.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/jsdl/basicExample.xml
+END
+POSIXProfileExample.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/gridway/!svn/ver/431/branches/gw_5_8_branch/examples/jsdl/POSIXProfileExample.xml
+END
